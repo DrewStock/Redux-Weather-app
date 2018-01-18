@@ -11,10 +11,10 @@ export const FETCH_WEATHER = 'FETCH_WEATHER'
 // Action Creators always have to return an Action, and
 // an Action is an object which always has a type
 
-// function takes a string (city) as an argument 
-export function fetchWeather(city) {
+// function takes a string (zipCode) as an argument 
+export function fetchWeather(zipCode) {
 
-    const url = `${ROOT_URL}&q=${city},us`;
+    const url = `${ROOT_URL}&zip=${zipCode},us`;
 
     const request = axios.get(url);
 
