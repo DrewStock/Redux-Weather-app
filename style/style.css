@@ -4,7 +4,7 @@ td, th {
 }
 
 .input-group {
-    margin: 20px 0;
+    margin: 2rem 0;
 }
 
 svg {
@@ -14,4 +14,8 @@ svg {
 .GoogleMap {
     height: 200px;
     width: 250px;
+}
+
+.input-label-warning {
+    display: none;
 }
