@@ -2,21 +2,29 @@ import React, { Component} from 'react';
 import { connect } from 'react-redux';
 import Chart from '../components/chart';
 import GoogleMap from '../components/google_map';
+import _ from 'lodash';
 
 class WeatherList extends Component {
     renderWeather(cityData) {
-        console.log('cityData', cityData);
+        console.log('city data', cityData);
         const cityName = cityData.city.name;
-        const temps = cityData.list.map(weather => weather.main.temp * 9/5 - 459.67);
+
+        // with formula to convert Kelvin to Fahrenheit
+        const temps = cityData.list.map(weather => 9/5 * (weather.main.temp - 273.15) + 32);
+        // const temps = cityData.list.map(weather => weather.main.temp * 9/5 - 459.67);
         const pressures = cityData.list.map(weather => weather.main.pressure);
         const humiditities = cityData.list.map(weather => weather.main.humidity);
         
-        // ES6 destructuring
+        // ES5 - variables for Google Maps
+        // const lon = cityData.city.coord.lon;
+        // const lat = cityData.city.coord.lat;
+
+        // or, equivalent with ES6 destructuring
         const { lon, lat }  = cityData.city.coord;
         
-        // console.log(temps);
-        // console.log(pressure);
-        // console.log(humidity);
+        console.log(temps);
+        // console.log(pressures);
+        // console.log(humiditities);
         
         return (
             <tr key={cityName}>

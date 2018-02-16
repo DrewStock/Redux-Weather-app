@@ -19,3 +19,16 @@ svg {
 .input-label-warning {
     display: none;
 }
+
+body {
+    background-color: lightblue;
+}
+
+.table {
+    background-color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: darkslategrey;
+    color: #fff;
+}

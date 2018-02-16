@@ -30,9 +30,11 @@ class SearchBar extends Component {
 
         // Using the RegExp.prototype.test() method to search for a match between a regular expression (zipCodeRegEx) and a string (this.state.term). If RegExp.test() evaluates to true, go ahead and fetch weather. If it evaluates to false, alert the user to change the search input.
         if (zipCodeRegEx.test(this.state.term)) {
+
         // We need to go and fetch weather data
         this.props.fetchWeather(this.state.term);
         this.setState({ term: ''});
+        
         warningLabel.style.display = 'none';
         } else {
             // alert('You can only search by zip code. Please update your search input to a 5 digit zip code.');

@@ -8,9 +8,6 @@ const ROOT_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KE
 // as a convention, declare a variable to hold an Action type
 export const FETCH_WEATHER = 'FETCH_WEATHER'
 
-// Action Creators always have to return an Action, and
-// an Action is an object which always has a type
-
 // function takes a string (zipCode) as an argument 
 export function fetchWeather(zipCode) {
 
@@ -19,7 +16,9 @@ export function fetchWeather(zipCode) {
     const request = axios.get(url);
 
     console.log('Request', request);
-
+    
+    // Action Creators always have to return an Action, and
+    // an Action is an object which always has a type
     return {
         type: FETCH_WEATHER,
         payload: request
